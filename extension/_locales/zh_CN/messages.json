@@ -1,0 +1,4 @@
+{
+  "extName": { "message": "Plane Reminder" },
+  "extDescription": { "message": "会议提醒：会议开始前 10 分钟和开始时，一架纸飞机会飞过屏幕。" }
+}

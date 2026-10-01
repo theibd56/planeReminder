@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Plane Reminder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="popup-header">
+    <svg class="popup-header__logo" viewBox="0 0 120 60" aria-hidden="true">
+      <polygon fill="currentColor" opacity=".55" points="118,26 8,4 48,29"/>
+      <polygon fill="currentColor" opacity=".8" points="118,26 48,29 40,50"/>
+      <polygon fill="currentColor" points="118,26 2,36 48,29"/>
+    </svg>
+    <h1 class="popup-heading" data-i18n-text="popupHeading"></h1>
+    <div id="language-switcher" class="language-switcher" role="radiogroup" data-i18n-aria-label="languageSwitcherLabel"></div>
+  </header>
+
+  <form id="reminder-form" class="reminder-form" autocomplete="off">
+    <label class="form-field">
+      <span class="form-field__label" data-i18n-text="quickAddLabel"></span>
+      <input id="quick-add-input" type="text" data-i18n-placeholder="quickAddPlaceholder">
+      <small id="quick-add-hint" class="form-field__hint"></small>
+    </label>
+    <label class="form-field">
+      <span class="form-field__label" data-i18n-text="meetingTitleLabel"></span>
+      <input id="meeting-title-input" type="text" data-i18n-placeholder="defaultMeetingTitle" maxlength="140">
+    </label>
+    <label class="form-field">
+      <span class="form-field__label" data-i18n-text="meetingDateTimeLabel"></span>
+      <input id="meeting-datetime-input" type="datetime-local" required>
+      <small id="meeting-datetime-hint" class="form-field__hint"></small>
+    </label>
+    <button class="button button--primary" type="submit" data-i18n-text="addReminderButton"></button>
+    <p class="form-footnote" data-i18n-text="formFootnote"></p>
+  </form>
+
+  <section class="upcoming-reminders">
+    <h2 class="section-heading" data-i18n-text="upcomingRemindersHeading"></h2>
+    <ul id="reminder-list" class="reminder-list"></ul>
+    <p id="empty-list-hint" class="empty-list-hint" data-i18n-text="emptyReminderListHint" hidden></p>
+  </section>
+
+  <button id="preview-button" class="preview-button" type="button" data-i18n-text="previewButton"></button>
+
+  <div id="toast" class="toast" hidden></div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
